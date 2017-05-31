@@ -19,7 +19,7 @@
           <h1>Infrastructure</h1>
           <h1>as</h1>
           <h1>Code</h1>
-          <h3>v1.1.1</h3>
+          <h3>v1.2.0</h3>
 
           <aside class="notes">
           * analiza co to jest
@@ -94,6 +94,7 @@
 
           <aside class="notes">
           * https://pl.wikipedia.org/wiki/Kod_%C5%BAr%C3%B3d%C5%82owy yeah I know, Wikipedia as scientific source...
+          * istnieja też generatory kodu
           </aside>
 
         </section>
@@ -113,19 +114,25 @@
 
         <section>
           <h2>IaC - Long story short</h2>
-
-          Kod wejściowy opisujący wymagane zasoby jest przetwarzany przez processor, który zwraca nam na końcu zasoby.
-          <br/>
-          <br/>
-          Czyli jest to tak naprawdę workflow manager.
-          <br/>
-          <br/>
-          Bardzo często IaC zawiera w sobie Configuration Management.
-
+          <ul>
+          <li>Posiadamy plik opisujący wymagane zasoby informatyczne - np. zestaw wirtualnych maszyn</li>
+          <li>Ten kod jest przetwarzany przez program (orkiestrator), który wykona czynności aby stworzyć te zasoby</li>
+          <li>W wyniku przetwarzania dostajemy zasoby w postaci np. wirtualnych maszyn, sieci komputerowych, kont użytkowników, uprawnień itd.</li>
           <aside class="notes">
           * orchestrator możne robić zasoby fizyczne i wirtualne
+          * możemy nie dostać zasobów
           </aside>
 
+        </section>
+
+        <section>
+          <h2>IaC - Long story short</h2>
+
+          Bardzo często IaC zawiera w sobie zarządzanie konfiguracją (Configuration Management).
+
+          <aside class="notes">
+          * często configuration management będzie poza nasza kontrolą, możemy zmieniać jedynia kilka parametrów - vide AWS RDS
+          </aside>
         </section>
 
 
@@ -400,11 +407,38 @@
             <li>Test Kitchen</li>
             <li>Serverspec / Inspec / TestInfra</li>
             <li>Packer</li>
-            <li>Jenkins plugins</li>
-            <li>Graphite / Grafana / ELK</li>
             </ul>
 
           <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h2>Narzędzia</h2>
+            <ul>
+            <li>Jenkins</li>
+            <li>Rundeck</li>
+            <li>Fabric, Capistrano</li>
+            <li>dowolne narzędzie!</li>
+            </ul>
+
+          <aside class="notes">
+          * tutaj tak naprawdę można wstawić prawie wszystko aby usprawnić proces
+          * np. zbieranie metryk nt. czasu budowania stakców itd.
+          * integracje
+          </aside>
+        </section>
+
+        <section>
+          <h2>Narzędzia w drugą stronę</h2>
+            <ul>
+            <li>blueprint</li>
+            <li>AWS CloudFormer</li>
+            </ul>
+
+          <aside class="notes">
+          * do reverse-enineeringu
+          * czy ktos zna cos podobnego u innych dostawców?
           </aside>
         </section>
 
@@ -424,6 +458,7 @@
             </ul>
 
           <aside class="notes">
+          * nie utop się w ilości narzędzi, sukcesywnie trzeba je dodawać i sprawdzać ich użyteczność
           * ostatni punkt - http://www.autonews.com/article/20160523/OEM01/305239980/honda-rethinks-henry-fords-assembly-line
           </aside>
         </section>
