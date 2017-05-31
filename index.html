@@ -14,6 +14,7 @@
     <div class="reveal">
       <div class="slides">
 
+
         <section>
           <h1>Infrastrucutre as Code</h1>
           <h3>v1.0.0</h3>
@@ -25,6 +26,7 @@
           * trudne pytania na które nie znam odpowiedzi
           </aside>
         </section>
+
 
         <section>
           <h1>O mnie</h1>
@@ -43,27 +45,13 @@
           </aside>
         </section>
 
-        <section>
-          <h1>Skróty</h1>
-          <ul>
-          <li>IaC - Infrastructure as Code</li>
-          <li>CI - Continuous Integration</li>
-          <li>CD - Continuous Delivery (or Deployment)</li>
-          </ul>
-
-          <aside class="notes">
-          * notka, ze czesc wiedzy bedzie z AWS
-          </aside>
-        </section>
 
         <section>
-          <h1>Analiza IaC</h1>
-          <ul>
-          <li>Infrastruktura informatyczna - cały sprzęt, oprogramowanie, sieci, wyposażenie itp., które są wymagane do rozwoju, testowania, monitorowania, kontroli lub obsługi aplikacji i usług informatycznych. Określenie to obejmuje wszystkie technologie informatyczne, ale nie dotyczy ludzi, procesów i dokumentacji.
-          </li>
-          <li>Kod - Kod źródłowy – zapis programu komputerowego przy pomocy określonego języka programowania, opisujący operacje jakie powinien wykonać komputer na zgromadzonych lub otrzymanych danych. Kod źródłowy jest wynikiem pracy programisty i pozwala wyrazić w czytelnej dla człowieka formie strukturę oraz działanie programu komputerowego
-          </li>
-          </ul>
+          <h1>Infrastruktura</h1>
+            Infrastruktura informatyczna - cały sprzęt, oprogramowanie, sieci, wyposażenie itp., które są wymagane do rozwoju, testowania, monitorowania, kontroli lub obsługi aplikacji i usług informatycznych. Określenie to obejmuje wszystkie technologie informatyczne, ale nie dotyczy ludzi, procesów i dokumentacji.
+            <br/>
+            <i>OGC: ITIL® Foundation Handbook</i>
+
           <aside class="notes">
           * OGC: ITIL® Foundation Handbook - Pocketbook from the Official Publisher of ITIL, TSO, ISBN: 9780113313495
           </aside>
@@ -71,21 +59,348 @@
         </section>
 
 
+        <section>
+          <h2>Główne elementy infrastruktury</h2>
+            <ul>
+            <li>storage - składowanie danych - np urządzenia blokowe/dyski</li>
+            <li>networking - sieci, reguły na fw, routing...</li>
+            <li>compute - moc obliczeniowa procesorów, pamięć ulotna</li>
+            <li>policy - definicje dostępu kontroli w/w zasobów + audyt</li>
+            <li>logic - spina wszystko razem aby stworzyć specyficzną usługę/funkcjonalność</li>
+            </ul>
 
-        <section data-background-image="img/zoom.out.gif"/>
+            <br/>
+
+          <aside class="notes">
+          * Z wyżej wymienionych elementów można zrealizować aktualnie wszystko inne.
+
+          </aside>
+        </section>
+
+
+        <section>
+          <h1>Kod</h1>
+            Kod źródłowy – zapis programu komputerowego przy pomocy określonego języka programowania, opisujący operacje jakie powinien wykonać komputer na zgromadzonych lub otrzymanych danych. Kod źródłowy jest wynikiem pracy programisty i pozwala wyrazić w czytelnej dla człowieka formie strukturę oraz działanie programu komputerowego. Najczęściej ma formę tekstową.
+            <br/>
+            <i>Wikipedia yayyy!</i>
+
+          <aside class="notes">
+          * https://pl.wikipedia.org/wiki/Kod_%C5%BAr%C3%B3d%C5%82owy yeah I know, Wikipedia as scientific source...
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h1>Analiza IaC</h1>
+          Infrastructure as Code jest przedstawieniem infrastruktury informatycznej w formie zrozumiałej zarówno przez człowieka jak i system tworzący tę infrastrukturę. Formą najczęściej stosowaną są pliki tekstowe.
+
+          <aside class="notes">
+          * można powiedziec, ze przeca juz to robimy - mamy configi i takie tam....
+          * oh wow, takie odkrywcze, such knowledge
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>IaC - Long story short</h2>
+
+          Kod wejściowy opisujący wymagane zasoby jest przetwarzany przez processor, który zwraca nam na końcu zasoby.
+          <br/>
+          <br/>
+          Czyli jest to tak naprawdę workflow manager.
+          <br/>
+          <br/>
+          Bardzo często IaC zawiera w sobie Configuration Management.
+
+          <aside class="notes">
+          * orchestrator moze robic kontrolowac zasoby fizyczne i wirtualne
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Cykl życia infrastruktury</h2>
+            <ul>
+            <li>planowanie - zależności, kolejności zasobów</li>
+            <li>zarezerwuj zasoby - sprawdź istniejące artefakty</li>
+            <li>stwórz zasoby - sieci, wirtualne maszyny itd...</li>
+            <li>wykonaj dodatkowe kroki - provision/testy</li>
+            <li>użytkowanie + monitorowanie i utrzymanie, audyty</li>
+            <li>przygotowanie do zwolnienia zasobów - np archiwizacja danych</li>
+            <li>zwolnienie zasobów</li>
+            </ul>
+
+          <aside class="notes">
+          * nie ma prototypowania bo już masz zasoby
+          * nie ma paczkowania i transportowania, jak w normalnym procesie produkcyjnym
+          * można dodać jeszcze zebranie informacji o systemie i przygotowanie poprawek dla następnej iteracji
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Etapy stosowania IaC</h2>
+            <ul>
+            <li>definicja wymagań - stworzenie specyfikacji</li>
+            <li>prototypowanie - silnie opiera sie na wykorzystaniu istniejących już prefabrykatów</li>
+            <li>implementacja - wrzucenie do repo szablonów, czasami tez jako artefakt</li>
+            <li>monitoring i zarządzanie istniejącymi instancjami infry</li>
+            <li>usprawnienia</li>
+            <li>wycofanie starych rozwiązań</li>
+            </ul>
+
+          <aside class="notes">
+          * klasyczne Plan Do Check Act
+          </aside>
+
+        </section>
+
+
+        <section data-background-image="img/dt091208.gif" data-background-size="contain">
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        </section>
+        <section>
+          <h2>Cechy wspólne z czystym programowaniem</h2>
+            <ul>
+            <li>zastosowanie tych samych metodologii i podobnych narzędzi</li>
+            <li>repozytorium - wersjonowanie + przegląd kodu</li>
+            <li>testy, głównie integracyjne</li>
+            <li>wykorzystywanie i tworzenie gotowych szablonów i artefaktów</li>
+            </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Główne różnice z czystym programem</h2>
+            <ul>
+            <li>czas kompilacji</li>
+            <li>czas i kontrola życia zasobów</li>
+            <li>limit instancji zasobów</li>
+            <li>sposób rezerwacji zasobów</li>
+            </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section data-background-image="img/feels.good.png" data-background-size="contain">
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Zalety</h2>
+            <ul>
+            <li>standaryzacja i parametryzacja środowisk</li>
+            <li>powtarzalność działań - przyśpieszenie wdrożeń</li>
+            <li>polepszenie współpracy Ops - Devs - Sec</li>
+            <li>integracja z innymi systemami</li>
+            <li>skupienie się na działaniu usług a nie poszczególnych elementów</li>
+            <li>ukrycie wielu zasobów pod usługą</li>
+            <li>efekt linii montażowej</li>
+            </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section data-background-image="img/dig.jpg"  data-background-size="contain">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Problemy</h2>
+            <ul>
+            <li>próg wejścia poznania narzędzi składowych</li>
+            <li>różne implementacje w zależności od dostawcy</li>
+            <li>powolne review i testy z powodu czasu tworzenia zasobów</li>
+            <li>resource hell - koszty tworzenia infry i utrzymywania wielu wersji</li>
+            <li>hybryda klasycznej infry i on-demand</li>
+            <li>niektóre rozwiązania nie nadążają</li>
+            <li>zmiana procedur</li>
+            </ul>
+
+          <aside class="notes">
+          * niekóre wdożenia są tylko częściowe
+          * terraform ma różne implementacje tworzenia zasobów w zależności do dostawcy
+          * nie da sie uniknąć klasycznej infrastruktury, jeśli nie przejdziemy wyłącznie na PaaS/SasS
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Problemy</h2>
+            <ul>
+            <li>kowencja nazw zasobów i ograniczenia</li>
+            <li>gdzie trzymać kod - w definicji usługi, osobne repo?</li>
+            <li>feature branches czy mono repo?</li>
+            <li>git flow</li>
+            <li>minimalne wymagania aby to zrealizować</li>
+            <li>repozytorium jest jako backup a nie realny stan zasobów - problem synchronizacji</li>
+            <li>aktualizacja zasobów może być niemożliwa</li>
+            </ul>
+
+          <aside class="notes">
+          * terraform ma różne implementacje tworzenia zasobów w zależności do dostawcy
+          * nie da sie uniknąć klasycznej infrastruktury, jeśli nie przejdziemy wyłącznie na PaaS/SasS
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Implikacje</h2>
+            <ul>
+            <li>infra zależy od kontekstu</li>
+            <li>infra zero - nie używana do realizacji celów biznesowych to marnowanie zasobów</li>
+            <li>fokus na usługach a nie na infrastrukturze</li>
+            <li>SDX - Software Defined X - wirtualizacja</li>
+            <li>CRD - Create, Read, Delete - no Update</li>
+            </ul>
+
+          <aside class="notes">
+          * format lekiem na całe zło
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Implikacje</h2>
+            <ul>
+            <li>stosowanie artefaktow w celu przyspieszenia tworzenia pewnych zasobów</li>
+            <li>ścisła integracja z configuration management - ansible/chef/puppet..</li>
+            <li>JEOS - just enough operating system</li>
+            </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+
+        <section>
+          <h2>Narzędzia</h2>
+            <ul>
+            <li>AWS CloudFormation</li>
+            <li>Microsoft Azure Resource Manager</li>
+            <li>Google Deployment Manager</li>
+            <li>VMware vRealize Automation / Orchestrator</li>
+            <li>IBM Workload Deployer</li>
+            <li>OpenStack Heat</li>
+            <li>Terraform</li>
+            <li>Ansible, Chef, Puppet, SaltStack</li>
+            <li>Foreman Deployemnts plugin</li>
+            <li>Apache Brooklyn</li>
+            </ul>
+
+          <aside class="notes">
+          * https://aws.amazon.com/cloudformation/
+          * https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview
+          * https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types
+          * http://www.vmware.com/products/vrealize-suite.html
+          </aside>
         </section>
 
         <section>
-          <h1>Pytania?</h1>
+          <h2>Narzędzia</h2>
+            <ul>
+            <li>Vagrant</li>
+            <li>Docker + Docker Compose</li>
+            <li>Test Kitchen</li>
+            <li>Serverspec / Inspec / TestInfra</li>
+            <li>Packer</li>
+            <li>Jenkins plugins</li>
+            <li>Graphite / Grafana / ELK</li>
+            </ul>
+
+          <aside class="notes">
+          * https://aws.amazon.com/cloudformation/
+          * https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview
+          * https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types
+          * http://www.vmware.com/products/vrealize-suite.html
+          </aside>
+        </section>
+
+        <section>
+          <h2>Kilka sugestii</h2>
+            <ul>
+            <li>zaczynać od małych rzeczy</li>
+            <li>zastanów się nad cyklem życia danego zasobu</li>
+            <li>nie musisz implementować całości od razu</li>
+            <li>nie staraj się szukać abstrakcji za wszelką cenę</li>
+            <li>będziesz musiał robić to samo wiele razy</li>
+            <li>zmieniaj implementacje</li>
+            <li>zasada 80/20, niestety nie zawsze działa</li>
+            <li>pełna automatyzacja zajmuje kosmiczną ilość czasu</li>
+            <li>czasami takie coś jak rollback nie istnieje</li>
+            </ul>
+
           <aside class="notes">
           </aside>
+        </section>
+
+
+        <section>
+          <h2>Przyszłość</h2>
+            <ul>
+            <li>super ścisła integracja z zarządzaniem konfiguracją i aplikacjami</li>
+            <li>ucieczka w kontenery</li>
+            <li>OASIS TOSCA - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
+            <li>dynamiczna tworzenie i wykrywanie zasobów - jak masz szyne</li>
+            <li>bardzo często przeradza się w PaaS a potem SaaS</li>
+            <li>DC/OS i Mesos - zupełnie inne spojrzenie na zasoby i aplikacje</li>
+            </ul>
+
+          <aside class="notes">
+          * ucieczka w software defined everything na bazie kontenerów
+          * nie oznacza to że IaC zginie, wręcz przeciwnie, ale zmieni się jego rola
+          </aside>
+        </section>
+
+
+        <section>
+          <h1>Pytania?</h1>
+          <img src="img/the.office.no.gif" />
+          <aside class="notes">
+          </aside>
+
         </section>
 
 
         <section>
           <h1>Dziękuję za uwagę!</h1>
+
           <aside class="notes">
           </aside>
+
         </section>
 
       </div>
