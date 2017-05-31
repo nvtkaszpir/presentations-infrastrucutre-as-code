@@ -16,8 +16,10 @@
 
 
         <section>
-          <h1>Infrastrucutre as Code</h1>
-          <h3>v1.0.0</h3>
+          <h1>Infrastructure</h1>
+          <h1>as</h1>
+          <h1>Code</h1>
+          <h3>v1.1.0</h3>
 
           <aside class="notes">
           * analiza co to jest
@@ -28,6 +30,12 @@
         </section>
 
 
+        <section data-background-image="img/avatar-small.png" data-background-size="contain">
+          <aside class="notes">
+          </aside>
+
+        </section>
+
         <section>
           <h1>O mnie</h1>
           <div id="avatar" style="width:200px;float:left;"><img src="img/avatar-small.png" width="150px"/></div>
@@ -36,7 +44,7 @@
 	          <li>System Engineer w Xstream Polska od Listopada 2013</li>
 	          <li>...not ops anymore, but not dev yet...<br/><br/></li>
 	          <li>mail: kaszpir @ gmail</li>
-	          <li>irc: _KaszpiR_</li>
+	          <li>irc: _KaszpiR_ (qnet/freenode/oftc)</li>
 	          </ul>
 					</div>
           <aside class="notes">
@@ -62,7 +70,7 @@
         <section>
           <h2>Główne elementy infrastruktury</h2>
             <ul>
-            <li>storage - składowanie danych - np urządzenia blokowe/dyski</li>
+            <li>storage - składowanie danych - np. urządzenia blokowe/dyski</li>
             <li>networking - sieci, reguły na fw, routing...</li>
             <li>compute - moc obliczeniowa procesorów, pamięć ulotna</li>
             <li>policy - definicje dostępu kontroli w/w zasobów + audyt</li>
@@ -115,7 +123,7 @@
           Bardzo często IaC zawiera w sobie Configuration Management.
 
           <aside class="notes">
-          * orchestrator moze robic kontrolowac zasoby fizyczne i wirtualne
+          * orchestrator możne robić zasoby fizyczne i wirtualne
           </aside>
 
         </section>
@@ -126,10 +134,10 @@
             <ul>
             <li>planowanie - zależności, kolejności zasobów</li>
             <li>zarezerwuj zasoby - sprawdź istniejące artefakty</li>
-            <li>stwórz zasoby - sieci, wirtualne maszyny itd...</li>
-            <li>wykonaj dodatkowe kroki - provision/testy</li>
+            <li>stwórz zasoby - sieci, wirtualne maszyny itp...</li>
+            <li>wykonaj dodatkowe kroki - konfiguracja/testy</li>
             <li>użytkowanie + monitorowanie i utrzymanie, audyty</li>
-            <li>przygotowanie do zwolnienia zasobów - np archiwizacja danych</li>
+            <li>przygotowanie do zwolnienia zasobów - np. archiwizacja danych</li>
             <li>zwolnienie zasobów</li>
             </ul>
 
@@ -146,7 +154,7 @@
           <h2>Etapy stosowania IaC</h2>
             <ul>
             <li>definicja wymagań - stworzenie specyfikacji</li>
-            <li>prototypowanie - silnie opiera sie na wykorzystaniu istniejących już prefabrykatów</li>
+            <li>prototypowanie - silnie opiera się na wykorzystaniu istniejących już prefabrykatów</li>
             <li>implementacja - wrzucenie do repo szablonów, czasami tez jako artefakt</li>
             <li>monitoring i zarządzanie istniejącymi instancjami infry</li>
             <li>usprawnienia</li>
@@ -155,6 +163,39 @@
 
           <aside class="notes">
           * klasyczne Plan Do Check Act
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>Podejścia od IaC</h2>
+            <ul>
+            <li>deklaratywny (funkcjonalny)</li>
+            <li>imperatywny (proceduralny)</li>
+            <li>inteligentny (świadomy od środowiska)</li>
+            </ul>
+
+          <br/>
+          What vs How vs Why.
+          <aside class="notes">
+          * deklaratywny skupia się na końcowym stanie konfiguracji, definiuje się grafy skierowane między zasobami, czyli zależność ich tworzenia - niestety czasem nie jest to intuicyjne, orchestrator decyduje jakie korki wykonać aby ten stan osiągnąć
+          * imperatywny opisuje jak infrastruktura powinna być zmieniona aby osiągnąć dany stan, od góry do dołu po kolei podane są komendy aby osiągnąć stan
+          * inteligente skupia się na na tym dlaczego konfiguracja powinna być zmieniona i w jaki sposób, mając na uwadze wszelkie działające już inne usługi i korelacje aplikacji i zasobów;determinuje jaki stan jest właściwy zanim system wykona odpowiednie kroki aby osiągnąć ten stan, tak aby nie wpłynąć na inne komponenty - next gen IaC
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>Realizacja IaC</h2>
+            <ul>
+            <li>push</li>
+            <li>pull</li>
+            <li>mixed</li>
+            </ul>
+
+          <br/>
+          Główna różnica polega na tym, w jaki sposób zasoby są konfigurowane.
+          <aside class="notes">
           </aside>
 
         </section>
@@ -204,6 +245,22 @@
 
         </section>
 
+        <section>
+          <h2>Główne mierzalne wartości IaC</h2>
+            <ul>
+            <li>redukcja kosztów</li>
+            <li>szybkość wdrożenia</li>
+            <li>minimalizacja ryzyka</li>
+            </ul>
+
+          <aside class="notes">
+          * redukcja kosztów - pracownicy mogą skupić się na innych zadaniach
+          * szybkośc wdrożenia - zdefiniowanie kroków można zautomatyzować i wykonywać jak szybko się da
+          * minimalizacja ryzyka - unikanie błędów popełnianych przez ludzi podczas powtarzalnych zadań
+          </aside>
+
+        </section>
+
 
         <section>
           <h2>Zalety</h2>
@@ -212,7 +269,7 @@
             <li>powtarzalność działań - przyśpieszenie wdrożeń</li>
             <li>polepszenie współpracy Ops - Devs - Sec</li>
             <li>integracja z innymi systemami</li>
-            <li>skupienie się na działaniu usług a nie poszczególnych elementów</li>
+            <li>skupienie się na działaniu usług, a nie poszczególnych elementów</li>
             <li>ukrycie wielu zasobów pod usługą</li>
             <li>efekt linii montażowej</li>
             </ul>
@@ -247,9 +304,8 @@
             </ul>
 
           <aside class="notes">
-          * niekóre wdożenia są tylko częściowe
           * terraform ma różne implementacje tworzenia zasobów w zależności do dostawcy
-          * nie da sie uniknąć klasycznej infrastruktury, jeśli nie przejdziemy wyłącznie na PaaS/SasS
+          * nie da się uniknąć klasycznej infrastruktury, jeśli nie przejdziemy wyłącznie na PaaS/SasS
           </aside>
 
         </section>
@@ -258,18 +314,17 @@
         <section>
           <h2>Problemy</h2>
             <ul>
-            <li>kowencja nazw zasobów i ograniczenia</li>
+            <li>konwencja nazw zasobów i ograniczenia</li>
             <li>gdzie trzymać kod - w definicji usługi, osobne repo?</li>
             <li>feature branches czy mono repo?</li>
             <li>git flow</li>
             <li>minimalne wymagania aby to zrealizować</li>
-            <li>repozytorium jest jako backup a nie realny stan zasobów - problem synchronizacji</li>
+            <li>repozytorium jest jako backup - problem synchronizacji</li>
             <li>aktualizacja zasobów może być niemożliwa</li>
+            <li>usuwanie całych środowisk, a nie wybranych komponentów</li>
             </ul>
 
           <aside class="notes">
-          * terraform ma różne implementacje tworzenia zasobów w zależności do dostawcy
-          * nie da sie uniknąć klasycznej infrastruktury, jeśli nie przejdziemy wyłącznie na PaaS/SasS
           </aside>
 
         </section>
@@ -279,8 +334,8 @@
           <h2>Implikacje</h2>
             <ul>
             <li>infra zależy od kontekstu</li>
-            <li>infra zero - nie używana do realizacji celów biznesowych to marnowanie zasobów</li>
-            <li>fokus na usługach a nie na infrastrukturze</li>
+            <li>infrastructure zero - nie twórz zasobów które nie są używane</li>
+            <li>fokus na usługach, a nie na infrastrukturze</li>
             <li>SDX - Software Defined X - wirtualizacja</li>
             <li>CRD - Create, Read, Delete - no Update</li>
             </ul>
@@ -295,8 +350,8 @@
         <section>
           <h2>Implikacje</h2>
             <ul>
-            <li>stosowanie artefaktow w celu przyspieszenia tworzenia pewnych zasobów</li>
-            <li>ścisła integracja z configuration management - ansible/chef/puppet..</li>
+            <li>stosowanie artefaktów w celu przyspieszenia tworzenia pewnych zasobów</li>
+            <li>ścisła integracja z configuration management - Ansible/Chef/Puppet...</li>
             <li>JEOS - just enough operating system</li>
             </ul>
 
@@ -317,7 +372,7 @@
             <li>OpenStack Heat</li>
             <li>Terraform</li>
             <li>Ansible, Chef, Puppet, SaltStack</li>
-            <li>Foreman Deployemnts plugin</li>
+            <li>Foreman Deployments plugin</li>
             <li>Apache Brooklyn</li>
             </ul>
 
@@ -361,9 +416,11 @@
             <li>zasada 80/20, niestety nie zawsze działa</li>
             <li>pełna automatyzacja zajmuje kosmiczną ilość czasu</li>
             <li>czasami takie coś jak rollback nie istnieje</li>
+            <li>skupienie się na robieniu jednego stacka</li>
             </ul>
 
           <aside class="notes">
+          * ostatni punkt - http://www.autonews.com/article/20160523/OEM01/305239980/honda-rethinks-henry-fords-assembly-line
           </aside>
         </section>
 
@@ -371,15 +428,17 @@
         <section>
           <h2>Przyszłość</h2>
             <ul>
-            <li>super ścisła integracja z zarządzaniem konfiguracją i aplikacjami</li>
+            <li>super ścisła integracja z zarządzaniem konfiguracją i aplikacjami - Continuous Configuration Automation</li>
+            <li>dynamiczne tworzenie i wykrywanie zasobów - jak masz szynę</li>
             <li>ucieczka w kontenery</li>
-            <li>OASIS TOSCA - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
-            <li>dynamiczna tworzenie i wykrywanie zasobów - jak masz szyne</li>
             <li>bardzo często przeradza się w PaaS a potem SaaS</li>
+            <li>OASIS TOSCA + CAMP / OpenStack Solum - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
             <li>DC/OS i Mesos - zupełnie inne spojrzenie na zasoby i aplikacje</li>
             </ul>
 
           <aside class="notes">
+          * CCA - Continuous Configuration Automation, większa widoczność zmian i rekonfiguracji aplikacji
+          * Cloud Application Management for Platforms
           * ucieczka w software defined everything na bazie kontenerów
           * nie oznacza to że IaC zginie, wręcz przeciwnie, ale zmieni się jego rola
           </aside>
