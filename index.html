@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Infrastrucure as Code</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Infrastrucutre as Code</h1>
+          <h3>v1.0.0</h3>
+
+          <aside class="notes">
+          * analiza co to jest
+          * czy rzeczywiście można traktować infre jak fragment oprogramowania
+          * teoria i praktyka
+          * trudne pytania na które nie znam odpowiedzi
+          </aside>
+        </section>
+
+        <section>
+          <h1>O mnie</h1>
+          <div id="avatar" style="width:200px;float:left;"><img src="img/avatar-small.png" width="150px"/></div>
+          <div id="omnie"  style="margin-left:260px;">
+	          <ul>
+	          <li>System Engineer w Xstream Polska od Listopada 2013</li>
+	          <li>...not ops anymore, but not dev yet...<br/><br/></li>
+	          <li>mail: kaszpir @ gmail</li>
+	          <li>irc: _KaszpiR_</li>
+	          </ul>
+					</div>
+          <aside class="notes">
+	        * pierwszy kontakt z chmurą na początku 2014r
+	        * w okolicy czerwca 2014r przeniesiony do sekcji projektowej
+          </aside>
+        </section>
+
+        <section>
+          <h1>Skróty</h1>
+          <ul>
+          <li>IaC - Infrastructure as Code</li>
+          <li>CI - Continuous Integration</li>
+          <li>CD - Continuous Delivery (or Deployment)</li>
+          </ul>
+
+          <aside class="notes">
+          * notka, ze czesc wiedzy bedzie z AWS
+          </aside>
+        </section>
+
+        <section>
+          <h1>Analiza IaC</h1>
+          <ul>
+          <li>Infrastruktura informatyczna - cały sprzęt, oprogramowanie, sieci, wyposażenie itp., które są wymagane do rozwoju, testowania, monitorowania, kontroli lub obsługi aplikacji i usług informatycznych. Określenie to obejmuje wszystkie technologie informatyczne, ale nie dotyczy ludzi, procesów i dokumentacji.
+          </li>
+          <li>Kod - Kod źródłowy – zapis programu komputerowego przy pomocy określonego języka programowania, opisujący operacje jakie powinien wykonać komputer na zgromadzonych lub otrzymanych danych. Kod źródłowy jest wynikiem pracy programisty i pozwala wyrazić w czytelnej dla człowieka formie strukturę oraz działanie programu komputerowego
+          </li>
+          </ul>
+          <aside class="notes">
+          * OGC: ITIL® Foundation Handbook - Pocketbook from the Official Publisher of ITIL, TSO, ISBN: 9780113313495
+          </aside>
+
+        </section>
+
+
+
+        <section data-background-image="img/zoom.out.gif"/>
+        </section>
+
+        <section>
+          <h1>Pytania?</h1>
+          <aside class="notes">
+          </aside>
+        </section>
+
+
+        <section>
+          <h1>Dziękuję za uwagę!</h1>
+          <aside class="notes">
+          </aside>
+        </section>
+
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.configure({
+        slideNumber: 'c/t',
+      });
+    </script>
+  </body>
+</html>
