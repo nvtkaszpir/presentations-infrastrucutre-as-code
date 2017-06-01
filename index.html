@@ -19,7 +19,7 @@
           <h1>Infrastructure</h1>
           <h1>as</h1>
           <h1>Code</h1>
-          <h3>v1.2.0</h3>
+          <h3>v1.3.0</h3>
 
           <aside class="notes">
           * analiza co to jest
@@ -27,10 +27,12 @@
           * teoria i praktyka
           * trudne pytania na które nie znam odpowiedzi
           </aside>
+
         </section>
 
 
         <section data-background-image="img/avatar-small.png" data-background-size="contain">
+
           <aside class="notes">
           </aside>
 
@@ -41,24 +43,26 @@
           <div id="avatar" style="width:200px;float:left;"><img src="img/avatar-small.png" width="150px"/></div>
           <div id="omnie"  style="margin-left:260px;">
 	          <ul>
-	          <li>System Engineer w Xstream Polska od Listopada 2013</li>
-	          <li>...not ops anymore, but not dev yet...<br/><br/></li>
-	          <li>mail: kaszpir @ gmail</li>
-	          <li>irc: _KaszpiR_ (qnet/freenode/oftc)</li>
+  	          <li>System Engineer w Xstream Polska od Listopada 2013</li>
+  	          <li>...not ops anymore, but not dev yet...<br/><br/></li>
+  	          <li>mail: kaszpir @ gmail</li>
+  	          <li>irc: _KaszpiR_ (qnet/freenode/oftc)</li>
 	          </ul>
 					</div>
+
           <aside class="notes">
 	        * pierwszy kontakt z chmurą na początku 2014r
 	        * w okolicy czerwca 2014r przeniesiony do sekcji projektowej
           </aside>
+
         </section>
 
 
         <section>
           <h1>Infrastruktura</h1>
-            Infrastruktura informatyczna - cały sprzęt, oprogramowanie, sieci, wyposażenie itp., które są wymagane do rozwoju, testowania, monitorowania, kontroli lub obsługi aplikacji i usług informatycznych. Określenie to obejmuje wszystkie technologie informatyczne, ale nie dotyczy ludzi, procesów i dokumentacji.
-            <br/>
-            <i>OGC: ITIL® Foundation Handbook</i>
+          Infrastruktura informatyczna - cały sprzęt, oprogramowanie, sieci, wyposażenie itp., które są wymagane do rozwoju, testowania, monitorowania, kontroli lub obsługi aplikacji i usług informatycznych. Określenie to obejmuje wszystkie technologie informatyczne, ale nie dotyczy ludzi, procesów i dokumentacji.
+          <br/>
+          <i>OGC: ITIL® Foundation Handbook</i>
 
           <aside class="notes">
           * OGC: ITIL® Foundation Handbook - Pocketbook from the Official Publisher of ITIL, TSO, ISBN: 9780113313495
@@ -69,28 +73,27 @@
 
         <section>
           <h2>Główne elementy infrastruktury</h2>
-            <ul>
+          <ul>
             <li>storage - składowanie danych - np. urządzenia blokowe/dyski</li>
             <li>networking - sieci, reguły na fw, routing...</li>
             <li>compute - moc obliczeniowa procesorów, pamięć ulotna</li>
             <li>policy - definicje dostępu kontroli w/w zasobów + audyt</li>
             <li>logic - spina wszystko razem aby stworzyć specyficzną usługę/funkcjonalność</li>
-            </ul>
-
-            <br/>
+          </ul>
 
           <aside class="notes">
           * Z wyżej wymienionych elementów można zrealizować aktualnie wszystko inne.
 
           </aside>
+
         </section>
 
 
         <section>
           <h1>Kod</h1>
-            Kod źródłowy – zapis programu komputerowego przy pomocy określonego języka programowania, opisujący operacje jakie powinien wykonać komputer na zgromadzonych lub otrzymanych danych. Kod źródłowy jest wynikiem pracy programisty i pozwala wyrazić w czytelnej dla człowieka formie strukturę oraz działanie programu komputerowego. Najczęściej ma formę tekstową.
-            <br/>
-            <i>Wikipedia yayyy!</i>
+          Kod źródłowy – zapis programu komputerowego przy pomocy określonego języka programowania, opisujący operacje jakie powinien wykonać komputer na zgromadzonych lub otrzymanych danych. Kod źródłowy jest wynikiem pracy programisty i pozwala wyrazić w czytelnej dla człowieka formie strukturę oraz działanie programu komputerowego. Najczęściej ma formę tekstową.
+          <br/>
+          <i>Wikipedia yayyy!</i>
 
           <aside class="notes">
           * https://pl.wikipedia.org/wiki/Kod_%C5%BAr%C3%B3d%C5%82owy yeah I know, Wikipedia as scientific source...
@@ -102,7 +105,9 @@
 
         <section>
           <h1>Analiza IaC</h1>
-          Infrastructure as Code jest przedstawieniem infrastruktury informatycznej w formie zrozumiałej zarówno przez człowieka jak i system tworzący tę infrastrukturę. Formą najczęściej stosowaną są pliki tekstowe.
+          Infrastructure as Code jest przedstawieniem infrastruktury informatycznej w formie zrozumiałej zarówno przez człowieka jak i system tworzący tę infrastrukturę.
+          <br/>
+          Formą najczęściej stosowaną są pliki tekstowe.
 
           <aside class="notes">
           * można powiedziec, ze przeca juz to robimy - mamy configi i takie tam....
@@ -115,9 +120,11 @@
         <section>
           <h2>IaC - Long story short</h2>
           <ul>
-          <li>Posiadamy plik opisujący wymagane zasoby informatyczne - np. zestaw wirtualnych maszyn</li>
-          <li>Ten kod jest przetwarzany przez program (orkiestrator), który wykona czynności aby stworzyć te zasoby</li>
-          <li>W wyniku przetwarzania dostajemy zasoby w postaci np. wirtualnych maszyn, sieci komputerowych, kont użytkowników, uprawnień itd.</li>
+            <li>Posiadamy plik opisujący wymagane zasoby informatyczne - np. zestaw wirtualnych maszyn</li>
+            <li>Ten kod jest przetwarzany przez program (orkiestrator), który wykona czynności aby stworzyć te zasoby</li>
+            <li>W wyniku przetwarzania dostajemy zasoby w postaci np. wirtualnych maszyn, sieci komputerowych, kont użytkowników, uprawnień itd.</li>
+          </ul>
+
           <aside class="notes">
           * orchestrator możne robić zasoby fizyczne i wirtualne
           * możemy nie dostać zasobów
@@ -131,14 +138,15 @@
           Bardzo często IaC zawiera w sobie zarządzanie konfiguracją (Configuration Management).
 
           <aside class="notes">
-          * często configuration management będzie poza nasza kontrolą, możemy zmieniać jedynia kilka parametrów - vide AWS RDS
+          * często configuration management będzie poza nasza kontrolą, możemy zmieniać jedynie kilka parametrów - vide AWS RDS
           </aside>
+
         </section>
 
 
         <section>
           <h2>Cykl życia infrastruktury</h2>
-            <ul>
+          <ul>
             <li>planowanie - zależności, kolejności zasobów</li>
             <li>zarezerwuj zasoby - sprawdź istniejące artefakty</li>
             <li>stwórz zasoby - sieci, wirtualne maszyny itp...</li>
@@ -146,7 +154,7 @@
             <li>użytkowanie + monitorowanie i utrzymanie, audyty</li>
             <li>przygotowanie do zwolnienia zasobów - np. archiwizacja danych</li>
             <li>zwolnienie zasobów</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * nie ma prototypowania bo już masz zasoby
@@ -159,14 +167,14 @@
 
         <section>
           <h2>Etapy stosowania IaC</h2>
-            <ul>
+          <ul>
             <li>definicja wymagań - stworzenie specyfikacji</li>
             <li>prototypowanie - silnie opiera się na wykorzystaniu istniejących już prefabrykatów</li>
             <li>implementacja - wrzucenie do repo szablonów, czasami tez jako artefakt</li>
             <li>monitoring i zarządzanie istniejącymi instancjami infry</li>
             <li>usprawnienia</li>
             <li>wycofanie starych rozwiązań</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * klasyczne Plan Do Check Act
@@ -177,13 +185,15 @@
         <section>
           <h2>Podejścia od IaC</h2>
             <ul>
-            <li>deklaratywny (funkcjonalny)</li>
-            <li>imperatywny (proceduralny)</li>
-            <li>inteligentny (świadomy od środowiska)</li>
+              <li>deklaratywny (funkcjonalny)</li>
+              <li>imperatywny (proceduralny)</li>
+              <li>inteligentny (świadomy od środowiska)</li>
             </ul>
 
           <br/>
+          <br/>
           What vs How vs Why.
+
           <aside class="notes">
           * deklaratywny skupia się na końcowym stanie konfiguracji, definiuje się grafy skierowane między zasobami, czyli zależność ich tworzenia - niestety czasem nie jest to intuicyjne, orchestrator decyduje jakie korki wykonać aby ten stan osiągnąć
           * imperatywny opisuje jak infrastruktura powinna być zmieniona aby osiągnąć dany stan, od góry do dołu po kolei podane są komendy aby osiągnąć stan
@@ -195,13 +205,13 @@
         <section>
           <h2>Realizacja IaC</h2>
             <ul>
-            <li>push</li>
-            <li>pull</li>
-            <li>mixed</li>
+              <li>push</li>
+              <li>pull</li>
             </ul>
 
           <br/>
           Główna różnica polega na tym, w jaki sposób zasoby są konfigurowane.
+
           <aside class="notes">
           </aside>
 
@@ -209,21 +219,21 @@
 
 
         <section data-background-image="img/dt091208.gif" data-background-size="contain">
+
           <aside class="notes">
           </aside>
 
         </section>
 
 
-        </section>
         <section>
           <h2>Cechy wspólne względem programowania</h2>
-            <ul>
+          <ul>
             <li>zastosowanie tych samych metodologii i podobnych narzędzi</li>
             <li>repozytorium - wersjonowanie + przegląd kodu</li>
             <li>testy, głównie integracyjne</li>
             <li>wykorzystywanie i tworzenie gotowych szablonów i artefaktów</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           </aside>
@@ -233,12 +243,12 @@
 
         <section>
           <h2>Główne różnice względem programowania</h2>
-            <ul>
+          <ul>
             <li>czas kompilacji</li>
             <li>czas i kontrola życia zasobów</li>
             <li>limit instancji zasobów</li>
             <li>sposób rezerwacji zasobów</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           </aside>
@@ -247,6 +257,7 @@
 
 
         <section data-background-image="img/feels.good.png" data-background-size="contain">
+
           <aside class="notes">
           </aside>
 
@@ -254,11 +265,11 @@
 
         <section>
           <h2>Główne mierzalne wartości IaC</h2>
-            <ul>
+          <ul>
             <li>redukcja kosztów</li>
             <li>szybkość wdrożenia</li>
             <li>minimalizacja ryzyka</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * redukcja kosztów - pracownicy mogą skupić się na innych zadaniach
@@ -271,15 +282,14 @@
 
         <section>
           <h2>Zalety</h2>
-            <ul>
+          <ul>
             <li>standaryzacja i parametryzacja środowisk</li>
             <li>powtarzalność działań - przyśpieszenie wdrożeń</li>
-            <li>polepszenie współpracy Ops - Devs - Sec</li>
+            <li>polepszenie współpracy między zespołami</li>
             <li>integracja z innymi systemami</li>
-            <li>skupienie się na działaniu usług, a nie poszczególnych elementów</li>
-            <li>ukrycie wielu zasobów pod usługą</li>
+            <li>ściślejsze łączenie logicznie powiązanych zasobów</li>
             <li>efekt linii montażowej</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           </aside>
@@ -288,10 +298,7 @@
 
 
         <section data-background-image="img/dig.jpg"  data-background-size="contain">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+
           <aside class="notes">
           </aside>
 
@@ -300,15 +307,15 @@
 
         <section>
           <h2>Problemy</h2>
-            <ul>
+          <ul>
             <li>próg wejścia poznania narzędzi składowych</li>
             <li>różne implementacje w zależności od dostawcy</li>
             <li>powolne review i testy z powodu czasu tworzenia zasobów</li>
             <li>resource hell - koszty tworzenia infry i utrzymywania wielu wersji</li>
             <li>hybryda klasycznej infry i on-demand</li>
-            <li>niektóre rozwiązania nie nadążają</li>
+            <li>niektóre rozwiązania nie nadążają za technologią</li>
             <li>zmiana procedur</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * terraform ma różne implementacje tworzenia zasobów w zależności do dostawcy
@@ -320,16 +327,29 @@
 
         <section>
           <h2>Problemy</h2>
-            <ul>
+          <ul>
             <li>konwencja nazw zasobów i ograniczenia</li>
             <li>gdzie trzymać kod - w definicji usługi, osobne repo?</li>
-            <li>feature branches czy mono repo?</li>
-            <li>git flow</li>
+            <li>git flow, feature branches, mono repo?</li>
             <li>minimalne wymagania aby to zrealizować</li>
             <li>repozytorium jest jako backup - problem synchronizacji</li>
             <li>aktualizacja zasobów może być niemożliwa</li>
             <li>usuwanie całych środowisk, a nie wybranych komponentów</li>
-            </ul>
+          </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>Implikacje</h2>
+          <ul>
+            <li>stosowanie artefaktów w celu przyspieszenia tworzenia pewnych zasobów</li>
+            <li>wiele różnych repozytoriów artefaktów</li>
+            <li>ścisła integracja z configuration management - Ansible/Chef/Puppet...</li>
+            <li>JEOS - just enough operating system</li>
+          </ul>
 
           <aside class="notes">
           </aside>
@@ -339,30 +359,17 @@
 
         <section>
           <h2>Implikacje</h2>
-            <ul>
+          <ul>
             <li>infra zależy od kontekstu</li>
             <li>infrastructure zero - nie twórz zasobów które nie są używane</li>
-            <li>fokus na usługach, a nie na infrastrukturze</li>
             <li>SDX - Software Defined X - wirtualizacja</li>
-            <li>CRD - Create, Read, Delete - no Update</li>
-            </ul>
+            <li>CRD - Create, Read, Delete - no Update, wymaga multi-instance</li>
+            <li>fokus na usługach, a nie na infrastrukturze</li>
+          </ul>
 
           <aside class="notes">
           * format lekiem na całe zło
-          </aside>
-
-        </section>
-
-
-        <section>
-          <h2>Implikacje</h2>
-            <ul>
-            <li>stosowanie artefaktów w celu przyspieszenia tworzenia pewnych zasobów</li>
-            <li>ścisła integracja z configuration management - Ansible/Chef/Puppet...</li>
-            <li>JEOS - just enough operating system</li>
-            </ul>
-
-          <aside class="notes">
+          * fokus na usługach oznacza przejscie na PaaS?
           </aside>
 
         </section>
@@ -370,14 +377,14 @@
 
         <section>
           <h2>Narzędzia</h2>
-            <ul>
+          <ul>
             <li>AWS CloudFormation</li>
             <li>Microsoft Azure Resource Manager</li>
             <li>Google Deployment Manager</li>
             <li>VMware vRealize Automation / Orchestrator</li>
             <li>IBM Workload Deployer</li>
             <li>OpenStack Heat</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * https://aws.amazon.com/cloudformation/
@@ -385,66 +392,73 @@
           * https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types
           * http://www.vmware.com/products/vrealize-suite.html
           </aside>
+
         </section>
 
 
         <section>
           <h2>Narzędzia</h2>
-            <ul>
+          <ul>
             <li>Terraform</li>
             <li>Ansible, Chef, Puppet, SaltStack</li>
             <li>Foreman Deployments plugin</li>
-            </ul>
+          </ul>
+
           <aside class="notes">
           </aside>
+
         </section>
+
 
         <section>
           <h2>Narzędzia</h2>
-            <ul>
+          <ul>
             <li>Vagrant</li>
             <li>Docker + Docker Compose</li>
             <li>Test Kitchen</li>
             <li>Serverspec / Inspec / TestInfra</li>
             <li>Packer</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           </aside>
+
         </section>
 
         <section>
           <h2>Narzędzia</h2>
-            <ul>
+          <ul>
             <li>Jenkins</li>
             <li>Rundeck</li>
             <li>Fabric, Capistrano</li>
             <li>dowolne narzędzie!</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * tutaj tak naprawdę można wstawić prawie wszystko aby usprawnić proces
           * np. zbieranie metryk nt. czasu budowania stakców itd.
           * integracje
           </aside>
+
         </section>
 
         <section>
           <h2>Narzędzia w drugą stronę</h2>
-            <ul>
+          <ul>
             <li>blueprint</li>
             <li>AWS CloudFormer</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * do reverse-enineeringu
           * czy ktos zna cos podobnego u innych dostawców?
           </aside>
+
         </section>
 
         <section>
           <h2>Kilka sugestii</h2>
-            <ul>
+          <ul>
             <li>zaczynać od małych rzeczy</li>
             <li>zastanów się nad cyklem życia danego zasobu</li>
             <li>nie musisz implementować całości od razu</li>
@@ -455,23 +469,24 @@
             <li>pełna automatyzacja zajmuje kosmiczną ilość czasu</li>
             <li>czasami takie coś jak rollback nie istnieje</li>
             <li>skupienie się na robieniu jednego stacka</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * nie utop się w ilości narzędzi, sukcesywnie trzeba je dodawać i sprawdzać ich użyteczność
           * ostatni punkt - http://www.autonews.com/article/20160523/OEM01/305239980/honda-rethinks-henry-fords-assembly-line
           </aside>
+
         </section>
 
 
         <section>
           <h2>Co dalej?</h2>
-            <ul>
+          <ul>
             <li>super ścisła integracja z zarządzaniem konfiguracją i aplikacjami - Continuous Configuration Automation</li>
             <li>dynamiczne tworzenie i wykrywanie zasobów - jak masz szynę</li>
             <li>ucieczka w kontenery</li>
             <li>bardzo często przeradza się w PaaS a potem SaaS</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * CCA - Continuous Configuration Automation, większa widoczność zmian i rekonfiguracji aplikacji
@@ -479,22 +494,24 @@
           * ucieczka w software defined everything na bazie kontenerów
           * nie oznacza to że IaC zginie, wręcz przeciwnie, ale zmieni się jego rola
           </aside>
+
         </section>
 
 
         <section>
           <h2>Coś więcej niż infra</h2>
-            <ul>
+          <ul>
             <li>OASIS TOSCA + CAMP / OpenStack Solum - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
             <li>Apache Brooklyn</li>
             <li>ALIEN 4 Cloudu</li>
             <li>Juju</li>
             <li>DC/OS i Mesos - zupełnie inne spojrzenie na zasoby i aplikacje</li>
-            </ul>
+          </ul>
 
           <aside class="notes">
           * te ostantie to juz raczej systemy/platformy
           </aside>
+
         </section>
 
         <section>
@@ -503,14 +520,12 @@
 
           <aside class="notes">
           </aside>
+
         </section>
 
 
         <section data-background-image="img/skynet.png"  data-background-size="contain">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+
           <aside class="notes">
           </aside>
 
@@ -520,6 +535,7 @@
         <section>
           <h1>Pytania?</h1>
           <img src="img/the.office.no.gif" />
+
           <aside class="notes">
           </aside>
 
