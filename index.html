@@ -19,7 +19,7 @@
           <h1>Infrastructure</h1>
           <h1>as</h1>
           <h1>Code</h1>
-          <h3>v1.4.0</h3>
+          <h3>v1.4.1</h3>
 
           <aside class="notes">
           * analiza co to jest
@@ -164,7 +164,6 @@
           </ul>
 
           <aside class="notes">
-          * nie ma prototypowania bo już masz zasoby
           * nie ma paczkowania i transportowania, jak w normalnym procesie produkcyjnym
           * można dodać jeszcze zebranie informacji o systemie i przygotowanie poprawek dla następnej iteracji
           </aside>
@@ -218,6 +217,8 @@
 
           <br/>
           Główna różnica polega na tym, w jaki sposób zasoby są konfigurowane.
+          Push wysyła na zasoby konfiguracje, pull to zasysanie konfiguracji przez zasób
+          Najczęściej chcemy mieć informację zwrotną i kontrolę kiedy aktualizacja się odbędzie.
 
           <aside class="notes">
           </aside>
@@ -380,7 +381,7 @@
 
           <aside class="notes">
           * format lekiem na całe zło
-          * fokus na usługach oznacza przejscie na PaaS?
+          * fokus na usługach oznacza przejście na PaaS?
           </aside>
 
         </section>
@@ -389,19 +390,16 @@
         <section>
           <h2>Narzędzia</h2>
           <ul>
-            <li>AWS CloudFormation</li>
-            <li>Microsoft Azure Resource Manager</li>
-            <li>Google Deployment Manager</li>
-            <li>VMware vRealize Automation / Orchestrator</li>
-            <li>IBM Workload Deployer</li>
-            <li>OpenStack Heat</li>
+            <li><a href="https://aws.amazon.com/cloudformation/">AWS CloudFormation</a></li>
+            <li><a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview">Microsoft Azure Resource Manager</a></li>
+            <li><a href="https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types">Google Deployment Manager</a></li>
+            <li><a href="http://www.vmware.com/products/vrealize-suite.html">VMware vRealize Automation / Orchestrator</a></li>
+            <li><a href="https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=3d0d700d-6109-4375-88bb-9e628fc2a6ec">IBM Workload Deployer</a></li>
+            <li><a href="https://wiki.openstack.org/wiki/Heat">OpenStack Heat</a></li>
           </ul>
 
           <aside class="notes">
-          * https://aws.amazon.com/cloudformation/
-          * https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview
-          * https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types
-          * http://www.vmware.com/products/vrealize-suite.html
+          * produkt IBM to raczej PaaS
           </aside>
 
         </section>
@@ -410,25 +408,9 @@
         <section>
           <h2>Narzędzia</h2>
           <ul>
-            <li>Terraform</li>
-            <li>Ansible, Chef, Puppet, SaltStack</li>
-            <li>Foreman Deployments plugin</li>
-          </ul>
-
-          <aside class="notes">
-          </aside>
-
-        </section>
-
-
-        <section>
-          <h2>Narzędzia</h2>
-          <ul>
-            <li>Vagrant</li>
-            <li>Docker + Docker Compose</li>
-            <li>Test Kitchen</li>
-            <li>Serverspec / Inspec / TestInfra</li>
-            <li>Packer</li>
+            <li><a href="https://www.ansible.com/">Ansible</a>, <a href="https://www.chef.io/chef/">Chef</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://saltstack.com/">SaltStack</a> - CM + tworzenie zasobów</li>
+            <li><a href="https://www.theforeman.org/">Foreman</a> + <a href="https://github.com/theforeman/foreman_deployments">foreman-deployments plugin</a> - server lifecycle, szczególnie na bare-metal + vm</li>
+            <li><a href="https://www.terraform.io/">Terraform</a> - multi-cloud, głównie tworzenie zasobów + CM</li>
           </ul>
 
           <aside class="notes">
@@ -436,12 +418,29 @@
 
         </section>
 
+
         <section>
           <h2>Narzędzia</h2>
           <ul>
-            <li>Jenkins</li>
-            <li>Rundeck</li>
-            <li>Fabric, Capistrano</li>
+            <li><a href="http://serverspec.org/">Serverspec</a> / <a href="https://www.inspec.io/">Inspec</a> / <a href="https://github.com/philpep/testinfra">TestInfra</a> - Test Driven Development</li>
+            <li><a href="https://www.vagrantup.com/">Vagrant</a> - tworzenie maszyn testowych</li>
+            <li><a href="http://kitchen.ci/">KitchenCI</a> - wcześniej znany jako Test Kitchen, Test Driven Development, np. z vagrantem i w/w narzędziami</li>
+            <li><a href="https://www.packer.io/">Packer</a> - tworzenie obrazów vm, kontenerów</li>
+            <li><a href="https://www.docker.com/">Docker</a> + <a href="https://docs.docker.com/compose/">Docker Compose</a> - głównie app development + testy</li>
+          </ul>
+
+          <aside class="notes">
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>Narzędzia</h2>
+          <ul>
+            <li>Ansible, <a href="http://capistranorb.com/">Capistrano</a>, <a href="http://www.fabfile.org/">Fabric</a> + <a href="http://www.pyinvoke.org/">Invoke</a>, Puppet + <a href="https://docs.puppet.com/mcollective/">MCollective</a>, SaltStack... </li>
+            <li><a href="https://buildbot.net/">BuildBot</a>, <a href="https://jenkins.io/">Jenkins</a>, <a href="http://rundeck.org/">Rundeck</a>, <a href="https://www.jetbrains.com/teamcity/">TeamCity</a>, <a href="https://travis-ci.org/">Travis</a>...</li>
+            <li><a href="https://www.sonarqube.org/">SonarQube</a> and other codesmells, <a href="http://www.openvas.org/">OpenVAS</a>...</li>
+            <li><a href="http://www.mkdocs.org/">mkdocs</a>, <a href="http://www.sphinx-doc.org/en/stable/">sphinx-doc</a>...</li>
             <li>dowolne narzędzie!</li>
           </ul>
 
@@ -456,8 +455,9 @@
         <section>
           <h2>Narzędzia w drugą stronę</h2>
           <ul>
-            <li>blueprint</li>
-            <li>AWS CloudFormer</li>
+            <li><a href="https://github.com/devstructure/blueprint">blueprint</a></li>
+            <li><a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cloudformer.html">AWS CloudFormer</a></li>
+            <li>penetration test tools?</li>
           </ul>
 
           <aside class="notes">
@@ -512,11 +512,11 @@
         <section>
           <h2>Coś więcej niż infra</h2>
           <ul>
-            <li>OASIS TOSCA + CAMP / OpenStack Solum - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
-            <li>Apache Brooklyn</li>
-            <li>ALIEN 4 Cloudu</li>
-            <li>Juju</li>
-            <li>DC/OS i Mesos - zupełnie inne spojrzenie na zasoby i aplikacje</li>
+            <li>OASIS <a href="https://www.oasis-open.org/committees/tosca/">TOSCA</a> + <a href="https://www.oasis-open.org/committees/camp/">CAMP</a> /<a href="https://wiki.openstack.org/wiki/Solum"> OpenStack Solum</a> - szablony do rozstawiania aplikacji wraz z wymaganymi zasobami</li>
+            <li><a href="https://brooklyn.apache.org/">Apache Brooklyn</a></li>
+            <li><a href="https://alien4cloud.github.io/">ALIEN 4 Cloud</a></li>
+            <li><a href="https://www.ubuntu.com/cloud/juju">Juju</a></li>
+            <li><a href="https://dcos.io/">DC/OS</a> i <a href="http://mesos.apache.org/">Mesos</a> - zupełnie inne spojrzenie na zasoby i aplikacje</li>
           </ul>
 
           <aside class="notes">
@@ -528,6 +528,9 @@
         <section>
           <h2>Przyszłość</h2>
             Systemy autonomiczne.
+            <br/>
+            <br/>
+            Automatyczna detekcja anomalii, samo naprawa i optymalizacja.
 
           <aside class="notes">
           </aside>
